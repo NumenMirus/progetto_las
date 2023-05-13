@@ -1,0 +1,124 @@
+{% extends 'default/base.html' %}
+
+{% block title %}the event{% endblock %}
+
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+<link rel="stylesheet" href="{% static 'default/css/login.css' %}">
+
+<script src="{% static 'default/js/login.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+  <div class="row centered">
+    
+    <!-- form login -->
+    <main style="display: none;">
+      <div class="login-holder">
+        <div class="container">
+          <div class="login">
+            <div class="form-holder">
+              <div class="dish"></div>
+              <div class="header">
+                <a class="header-item activated" href="#login" id="login-caller">Accedi</a>
+                <a class="header-item" href="#register" id="register-caller">Registrati</a>
+              </div>
+              <div class="form activated" id="login">
+                <div class="input-row">
+                  <input class="input" type="text" required>
+                  <label class="label">Username</label>
+                  <span class="highlite"></span>
+                  <span class="bar"></span>
+                </div>
+                <div class="input-row">
+                  <input class="input" type="password" required>
+                  <label class="label">Password</label>
+                  <span class="highlite"></span>
+                  <span class="bar"></span>
+                </div>
+                <div>
+                  <input class="check-input" type="checkbox" id="login-checkbox" />
+                  <label for="login-checkbox">Ricordami</label>
+                </div>
+              </div>
+              <div class="form" id="register">
+                <div class="input-row">
+                  <input class="input" type="text" required>
+                  <label class="label">Username</label>
+                  <span class="highlite"></span>
+                  <span class="bar"></span>
+                </div>
+                <div class="input-row">
+                  <input class="input" type="text" required>
+                  <label class="label">Nome</label>
+                  <span class="highlite"></span>
+                  <span class="bar"></span>
+                </div>
+                <div class="input-row">
+                  <input class="input" type="text" required>
+                  <label class="label">Cognome</label>
+                  <span class="highlite"></span>
+                  <span class="bar"></span>
+                </div>
+                <div class="input-row">
+                  <input class="input" type="email" required>
+                  <label class="label">email</label>
+                  <span class="highlite"></span>
+                  <span class="bar"></span>
+                </div>
+                <div class="input-row">
+                  <input class="input" type="password" required>
+                  <label class="label">Password</label>
+                  <span class="highlite"></span>
+                  <span class="bar"></span>
+                </div>
+                <div class="input-row">
+                  <input class="input" type="password" required>
+                  <label class="label">Conferma password </label>
+                  <span class="highlite"></span>
+                  <span class="bar"></span>
+                </div>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown button
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </div>
+                <br></br>
+                <div>
+                  <input class="check-input" type="checkbox" id="register-checkbox" />
+                  <label for="register-checkbox">Accetto i termini di servizio di registrazione</label>
+                </div>
+              </div>
+            </div>
+            <div class="sub-button">
+              <!-- controllare se fare login o registrazione -->
+              <!-- cambiare bottone perchè non funziona -->
+              <input class="button" type="submit" value="Submit" href="/login">
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- form login end -->
+
+    
+
+    {% load crispy_forms_tags %}
+    <form method="post" style="width: 40%;">
+      <h2>Log In</h2>
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button class="button" type="submit">Log In</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

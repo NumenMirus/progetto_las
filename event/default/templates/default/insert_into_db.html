@@ -1,0 +1,29 @@
+{% extends 'default/base.html' %}
+
+{% block title %}Insert into DB{% endblock %}
+
+{% load static %}
+{% block head %}{% endblock %}
+
+{% block body %}
+
+<div class="spacer"></div>
+<div class="spacer"></div>
+
+<div class="row w-100">
+    <div class="col centered">
+        <form action="/insert_into_db/" method="POST">
+            {% csrf_token %}
+            <table>
+                {{ eventform.as_table }}
+            </table>
+            <input type="submit" value="Salva">
+        </form>
+    </div>
+</div>
+
+
+<div class="spacer"></div>
+<div class="spacer"></div>
+
+{% endblock %}

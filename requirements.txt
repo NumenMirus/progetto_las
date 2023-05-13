@@ -1,0 +1,7 @@
+Django==4.2
+python-dotenv==1.0.0
+pymysql
+mysqlclient
+pillow
+gunicorn
+crispy_bootstrap5

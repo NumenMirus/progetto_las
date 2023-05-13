@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
+
+
+* {
+    font-family: Poppins;
+    z-index: 100;
+}
+
+/* GHOST CSS FOR DEBUG ONLY */
+
+/* * {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+} */
+
+/* .navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav .nav-link .nav-link.active, .navbar-light .navbar-nav .show .nav-link */
+.navbar-light .navbar-nav .nav-link{
+    color:white;
+} 
+
+
+body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    background-color: white;
+}
+
+
+footer{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.spacer {
+    margin: 200px;
+}
+
+.small-spacer {
+    margin: 50px;
+}
+
+.centered {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.align-left {
+    display: flex;
+    justify-content: left;
+}
+
+.align-right {
+    display: flex;
+    justify-content: right;
+}
+
+.slogan {
+    color: white;
+    margin-left: 2%;
+}
+
+.padded {
+    padding: 20px;
+}
+
+.button1 {
+    background: linear-gradient(84.12deg, #522FCF -24.93%, #9271E8 139.25%);
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 800;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.the-blur {
+    position: fixed;
+    top:0;
+    width: 100%;
+    min-height: 50px;
+    margin-bottom: 20px;
+    background: rgba(0,0,0,.4);
+    z-index:1010;
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    -o-filter: blur(20px);
+    -ms-filter: blur(20px);
+    filter: blur(20px);
+}
+
+
+
+@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ 
+
+}
+@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+
+}
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
+
+}
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+
+}
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ 
+
+}
+@media (min-width:1281px) { /* hi-res laptops and desktops */ 
+
+}

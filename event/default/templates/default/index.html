@@ -1,0 +1,201 @@
+{% extends 'default/base.html' %}
+
+{% load static %}
+{% block title %}The Event{% endblock %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'default/css/index.css' %}"> 
+<script src="{% static 'default/js/jqfloat.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+
+<div class="container-flex" style="text-align: center;">
+        <div class="row centered align-left padded w-100" style="height: 500px; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% static 'default/images/concert.jpg' %}');">
+            <div class="col">
+            <p class="display-1 slogan">Non è mai stato <br> così semplice.</p>
+        </div>
+        <div class="col-sm-4">
+            <div class="card" >
+                <div class="card-body">
+                    <h4 class="card-title">Niente da fare stasera?</h4>
+
+                    <form>
+                        <label for="citySelect">Seleziona una città</label>
+                        <select class="form-select" style="width: 100%;" id="citySelect">
+                            <option value="12" selected="">Mestre</option>
+                            <option value="13">Milano</option>
+                            <option value="14">Venezia</option>
+                            <option value="15">Roma</option>
+                            <option value="16">Piove di sacco</option>
+                        </select>
+                        <label for="eventKeyword" style="margin-top: 25px;">Nome evento</label>
+                        <input class="form-control" type="text" style="width: 100%;" id="eventKeyword">
+                        <input class="button1" type="submit" style="margin-top: 25px; width: 50%;" value="Cerca">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <!-- prima riga -->
+        <div class="row w-100 align-left padded">
+
+            <div class="small-spacer"></div>
+            <div class="col centered">
+                <p class="h1">Sarà un evento memorabile! <br> Pensiamo a tutto noi.</p>
+            </div>
+
+            <!-- primo slider di eventi -->
+            <div class="col centered">
+                <div class="blog-slider">
+
+                    <div class="blog-slider__wrp swiper-wrapper">
+                        <div class="blog-slider__item swiper-slide">
+                            <div class="blog-slider__img">
+                                <img src="{% static 'default/images/guns-n-roses.jpg' %}" alt="">
+                            </div>
+                            <div class="blog-slider__content">
+                                <span class="blog-slider__code">08 Luglio 2023</span>
+                                <div class="blog-slider__title">Guns N' Roses</div>
+                                <div class="blog-slider__text">I Guns N' Roses annunciano un'imperdibile data italiana del tour mondiale. </div>
+                                <a href="#" class="blog-slider__button">Scropri i dettagli</a>
+                            </div>
+                        </div>
+
+                        <div class="blog-slider__item swiper-slide">
+                            <div class="blog-slider__img">
+                                <img src="{% static 'default/images/cantanteUltimo.jpg' %}" alt="">
+                            </div>
+                            <div class="blog-slider__content">
+                                <span class="blog-slider__code">01 Luglio 2023</span>
+                                <div class="blog-slider__title">Ultimo</div>
+                                <div class="blog-slider__text">Annunciate nuove date</div>
+                                <a href="#" class="blog-slider__button">Scropri i dettagli</a>
+                            </div>
+                        </div>
+
+                        <div class="blog-slider__item swiper-slide">
+                            <div class="blog-slider__img">
+                                <img src="{% static 'default/images/pinguini_tattici_nucleari.jpg' %}" alt="">
+                            </div>
+                            <div class="blog-slider__content">
+                                <span class="blog-slider__code">07 Luglio 2023</span>
+                                <div class="blog-slider__title">Pinguini Tattici Nucleari</div>
+                                <div class="blog-slider__text">Nuove limitate disponibilità di biglietti per le date negli stadi.</div>
+                                <a href="#" class="blog-slider__button">Scropri i dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-slider__pagination"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- seconda riga -->
+        <div class="row w-100 align-right padded">
+
+            <!-- primo slider di eventi -->
+            <div class="col centered">
+                <div class="blog-slider">
+
+                    <div class="blog-slider__wrp swiper-wrapper">
+                        <div class="blog-slider__item swiper-slide">
+                            <div class="blog-slider__img">
+                                <img src="{% static 'default/images/int-mil.jpg' %}" alt="">
+                            </div>
+                            <div class="blog-slider__content">
+                                <span class="blog-slider__code">10 Novembre 2023</span>
+                                <div class="blog-slider__title">Milan - Inter</div>
+                                <div class="blog-slider__text">Ancora una volta le due grandi rivali di Milano si scontrano. <br></br> Chi vincerà? </div>
+                                <a href="#" class="blog-slider__button">Scropri i dettagli</a>
+                            </div>
+                        </div>
+
+                        <div class="blog-slider__item swiper-slide">
+                            <div class="blog-slider__img">
+                                <img src="{% static 'default/images/Reyer_venezia_mestre.png' %}" alt="">
+                            </div>
+                            <div class="blog-slider__content">
+                                <span class="blog-slider__code">01 Luglio 2023</span>
+                                <div class="blog-slider__title">Reyer open day</div>
+                                <div class="blog-slider__text">Passa un intera giornata assieme ai ragazzi del taliercio. <br></br> Mangia, allenati e divertiti come un vero professionista!</div>
+                                <a href="#" class="blog-slider__button">Scropri i dettagli</a>
+                            </div>
+                        </div>
+
+                        <div class="blog-slider__item swiper-slide">
+                            <div class="blog-slider__img">
+                                <img src="{% static 'default/images/SpartanRace.jpg' %}" alt="">
+                            </div>
+                            <div class="blog-slider__content">
+                                <span class="blog-slider__code">18 Giugno 2023</span>
+                                <div class="blog-slider__title">Spartan Race</div>
+                                <div class="blog-slider__text">Mettiti alla prova e partecipa ad una gara che solo pochi sanno portare a termine.</div>
+                                <a href="#" class="blog-slider__button">Scropri i dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-slider__pagination"></div>
+                </div>
+            </div>
+
+            <div class="col centered">
+                <p class="h1 text-align: right;">Alta tecnologia al tuo servizio.</p>
+            </div>
+            <div class="small-spacer"></div>
+        </div>
+
+        <div class="row w-100 align-right padded">
+            <!-- <section> -->
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-4">
+                        <div class="card card_red text-center">
+                            <!-- sistemare immagine  -->
+                            <div class="title">
+                                <i class="fa fa-home" aria-hidden="true"></i>
+                                <br></br>
+                            </div>
+                            <div class="h4" style="color:white">
+                                <p>Possiedi una struttura e vuoi creare un evento?<br></br>
+                                    Registrati e comincia la festa<br></br> </p>
+                            </div>
+                            <a href="login">Iscriviti</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-4">
+                        <div class="card card_violet text-center">
+                            <!-- sistemare immagine  -->
+                            <div class="title">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <br></br>
+                            </div>
+                            <div class="h4" style="color:white">
+                                <p>Hai nuove idee ma non sai come dargli vita?<br></br>
+                                    Diventa organizzatore e inizia a guadagnare</p>
+                            </div>
+                            <a href="login">Iscriviti</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+            </div>
+        </div>
+    <!-- </section> -->
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{% static 'default/js/index.js' %}"></script>
+{% endblock %}
