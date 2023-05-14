@@ -9,14 +9,13 @@ services:
     env_file:
       - ./event/.env
     restart: unless-stopped
-    volumes: # host:container
-      - remote_static:/static
-      - remote_media:/media
 
   nginx: 
     image: nginx:latest
     volumes:
       - ./nginx_conf:/etc/nginx/conf.d
+      - remote_static:/static
+      - remote_media:/media
     depends_on:
       - web
     ports:
