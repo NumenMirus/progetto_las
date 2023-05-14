@@ -8,7 +8,7 @@ services:
     #   - 8000:8000
     env_file:
       - ./event/.env
-    restart: always
+    restart: unless-stopped
     volumes: # host:container
       - remote_static:/static
       - remote_media:/media
