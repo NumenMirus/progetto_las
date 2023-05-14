@@ -10,8 +10,8 @@ services:
       - ./event/.env
     restart: always
     volumes: # host:container
-      - media:/media
-      - static:/static
+      - remote_static:/static
+      - remote_media:/media
 
   nginx: 
     image: nginx:latest
@@ -24,15 +24,18 @@ services:
 
 
 volumes:
-  static:
-    driver: local
+  remote_static:
     driver_opts:
-      type: none
-      device: /event/volumes/static
-      o: bind
-  media:
-    driver: local
+      type: nfs
+      o: addr=192.168.100.228,nfsvers=4
+      device: :/event/static
+  remote_media:
     driver_opts:
-      type: none
-      device: /event/volumes/media
-      o: bind
+      type: nfs
+      o: addr=192.168.100.228,nfsvers=4
+      device: :/event/media
+  remote_logs:
+    driver_opts:
+      type: nfs
+      o: addr=192.168.100.228,nfsvers=4
+      device: :/event/logs

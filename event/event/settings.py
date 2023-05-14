@@ -132,7 +132,7 @@ USE_TZ = os.getenv('DJANGO_USE_TZ', 'True') == 'true'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join('/', 'static')
 
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join('/', 'media')
 
 
