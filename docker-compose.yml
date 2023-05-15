@@ -9,6 +9,13 @@ services:
     env_file:
       - ./event/.env
     restart: unless-stopped
+    depends_on:
+      - rsyslog
+    logging:
+      driver: syslog
+      options:
+        syslog-address: "tcp://localhost:514"
+        tag: "WS1"
 
   nginx: 
     image: nginx:latest
@@ -18,8 +25,27 @@ services:
       - remote_media:/media
     depends_on:
       - web
+      - rsyslog
     ports:
       - 8000:8000
+    restart: unless-stopped
+    logging:
+      driver: syslog
+      options:
+        syslog-address: "tcp://localhost:514"
+        tag: "WS1"
+  
+  rsyslog:
+    build: ./rsyslog/
+    image: syslogserver
+    volumes:
+      - remote_logs:/var/log
+    ports:
+      - 514:514
+      - 514:514/udp
+    cap_add:
+      - SYSLOG
+    restart: unless-stopped
 
 
 volumes:
